@@ -1,0 +1,620 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0 solid transparent;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1;
+  text-rendering: optimizeSpeed;
+  scroll-behavior: smooth;
+}
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button,
+[role="button"] {
+  cursor: pointer;
+  background-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+  &:focus {
+    outline: 0;
+  }
+}
+
+a {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+[type="date"],
+[type="datetime"],
+[type="datetime-local"],
+[type="email"],
+[type="month"],
+[type="number"],
+[type="password"],
+[type="search"],
+[type="tel"],
+[type="text"],
+[type="time"],
+[type="url"],
+[type="week"],
+textarea,
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  &:focus {
+    outline: 0;
+  }
+}
+
+::-moz-placeholder {
+  opacity: 1;
+}
+
+textarea {
+  vertical-align: top;
+
+  overflow: auto;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  &:focus {
+    outline: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* global selector */
+:root {
+  /* colors */
+  --primary-color: hsl(101, 51%, 59%);
+  --secondary-color: hsl(0, 0%, 100%);
+  --tertiary-color: hsl(214, 17%, 16%);
+  --destructive-color: hsl(0, 71%, 58%);
+
+  /* font */
+  --main-font: "Open Sans", sans-serif;
+  /* layout */
+  --root-flex: flex;
+  --flex-jc-s-between: space-between;
+  --flex-jc-a-around: space-around;
+  --flex-jc-center: center;
+  --flex-a-center: center;
+  --flex-d-col: column;
+  --flex-a-start: flex-start;
+  --root-grid: grid;
+  --grid-col-repeat: repeat(3, 1fr);
+  /* widths */
+  --lg-width: 68.75rem;
+  /* breakpoints */
+  --bp-sm: 600px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+  --bp-2xl: 1536px;
+}
+
+header {
+  display: var(--root-flex);
+  justify-content: var(--flex-jc-a-around);
+  align-items: var(--flex-a-center);
+  height: 5rem;
+  position: fixed;
+  top: 0;
+  z-index: 20;
+  width: 100%;
+  background-color: var(--secondary-color);
+}
+
+header .logo-brand span {
+  font-family: var(--main-font);
+  font-weight: 900;
+  font-size: 1.375rem;
+  color: var(--primary-color);
+}
+
+header nav ul {
+  display: var(--root-flex);
+}
+
+header nav ul li a {
+  font-family: var(--main-font);
+  padding: 0.75rem;
+  font-weight: 700;
+  color: var(--tertiary-color);
+  transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+header .menu-bar {
+  display: none;
+}
+
+/* main content */
+main .header-banner-container {
+  background-image: url("./assets/images/site-banner.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100dvh;
+  width: 100%;
+  position: relative;
+  display: var(--root-flex);
+  justify-content: var(--flex-jc-center);
+  align-items: var(--flex-a-center);
+}
+
+main .header-banner-container.milea {
+  background-image: url("./assets/images/item-01.jpg");
+  min-height: 70dvh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main .header-banner-container.batangas-beaches {
+  background-image: url("./assets/images/item-02.jpg");
+  min-height: 70dvh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main .header-banner-container.caleruega {
+  background-image: url("./assets/images/item-03.jpg");
+  min-height: 70dvh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main .header-banner-container.fantasy-world {
+  background-image: url("./assets/images/item-04.jpg");
+  min-height: 70dvh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main .header-banner-container.mt-batulao {
+  background-image: url("./assets/images/item-05.jpg");
+  min-height: 70dvh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main .header-banner-container.fortune-island {
+  background-image: url("./assets/images/item-06.jpg");
+  min-height: 70dvh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main .header-banner-container:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.623);
+  z-index: 5;
+}
+
+main .header-banner-container .header-text-container {
+  display: var(--root-flex);
+  flex-direction: var(--flex-d-col);
+  justify-content: var(--flex-jc-center);
+  align-items: var(--flex-a-center);
+  height: 100%;
+  width: 100%;
+  color: var(--secondary-color);
+  position: relative;
+  z-index: 6;
+  padding: 0 3.125rem;
+}
+
+main .header-banner-container .header-text-container h1 {
+  font-family: var(--main-font);
+  font-size: clamp(2.75rem, -0.5313rem + 10.5vw, 5.375rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--secondary-color);
+  text-align: center;
+}
+
+main .header-banner-container .header-text-container h1 .ph {
+  background-clip: text;
+  background-image: url("./assets/images/ph-flag.jpg");
+  background-size: contain;
+  display: inline-block;
+  position: relative;
+  font-weight: bold;
+  color: transparent;
+}
+
+main .header-banner-container .header-text-container p {
+  font-family: var(--main-font);
+  font-size: clamp(1.125rem, 0.6563rem + 1.5vw, 1.5rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--secondary-color);
+  text-align: center;
+}
+main .header-banner-container .header-text-container p .beaches,
+.islands,
+.mountains {
+  text-decoration: underline;
+}
+
+/* tourist spots */
+main .tourist-spots-container {
+  margin-top: -5rem;
+  padding: 6.25rem 0;
+  position: relative;
+  z-index: 8;
+  /* background-color: var(--tertiary-color); */
+  min-height: 50vh;
+}
+
+main .tourist-spots-container .tourist-item-card-container {
+  display: var(--root-grid);
+  grid-template-columns: var(--grid-col-repeat);
+  gap: 3.125rem;
+  margin: -7.5rem auto 0 auto;
+  max-width: var(--lg-width);
+  width: 100%;
+  padding: 0 3.125rem;
+}
+
+main
+  .tourist-spots-container
+  .tourist-item-card-container
+  .tourist-inner-card-container {
+  position: relative;
+  overflow: hidden;
+}
+
+main
+  .tourist-spots-container
+  .tourist-item-card-container
+  .spot-card-container {
+  overflow: hidden;
+  transition: transform 0.5s ease;
+}
+
+main
+  .tourist-spots-container
+  .tourist-item-card-container
+  .tourist-inner-card-container {
+  transition: transform 0.5s ease;
+}
+
+main
+  .tourist-spots-container
+  .tourist-item-card-container
+  .tourist-inner-card-container:hover {
+  transform: scale(1.05);
+  overflow: hidden;
+  transition: transform 0.5s ease;
+}
+
+main
+  .tourist-spots-container
+  .tourist-item-card-container
+  .tourist-inner-card-container
+  .title-container
+  h2 {
+  transition: transform 0.5s ease;
+  font-weight: normal;
+}
+
+main
+  .tourist-spots-container
+  .tourist-item-card-container
+  .tourist-inner-card-container:hover
+  .title-container
+  h2 {
+  transition: transform 0.5s ease;
+  transform: translateX(10%);
+}
+
+main
+  .tourist-spots-container
+  .tourist-item-card-container
+  .tourist-inner-card-container
+  .title-container
+  i {
+  transition: transform 0.5s ease;
+  border: 1px solid var(--secondary-color);
+  color: #fff;
+  font-size: 1rem;
+  display: var(--root-flex);
+  align-items: var(--flex-a-center);
+  justify-content: var(--flex-jc-center);
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 100%;
+}
+
+main
+  .tourist-spots-container
+  .tourist-item-card-container
+  .tourist-inner-card-container:hover
+  .title-container
+  i {
+  transition: transform 0.5s ease;
+  transform: translateX(-30%);
+}
+
+main .tourist-spots-container .tourist-inner-card-container img {
+  height: 100%;
+  width: 100%;
+}
+
+main
+  .tourist-spots-container
+  .tourist-item-card-container
+  .tourist-inner-card-container
+  .title-container {
+  background-color: rgba(0, 0, 0, 0.356);
+  position: absolute;
+  bottom: 0;
+  display: var(--root-flex);
+  align-items: var(--flex-a-center);
+  justify-content: var(--flex-jc-s-between);
+  overflow-x: hidden;
+  width: 100%;
+  height: 68px;
+  padding: 0 12px;
+}
+
+main
+  .tourist-spots-container
+  .tourist-item-card-container
+  .tourist-inner-card-container
+  .title-container
+  h2 {
+  font-size: clamp(1rem, 0.8438rem + 0.5vw, 1.125rem);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--secondary-color);
+  font-family: var(--main-font);
+}
+
+main
+  .tourist-spots-container
+  .tourist-item-card-container
+  .tourist-inner-card-container
+  .title-container
+  i {
+  font-size: clamp(1.125rem, 0.0313rem + 3.5vw, 2rem);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--secondary-color);
+  font-family: var(--main-font);
+}
+
+/* Places page*/
+main .spot-container {
+  padding: 6.25rem 3.125rem;
+}
+
+main .spot-container .spot-description-container {
+  width: var(--lg-width);
+  margin: 0 auto;
+  min-height: 50dvh;
+  width: 100%;
+  max-width: var(--lg-width);
+  display: var(--root-flex);
+  align-items: var(--flex-a-center);
+}
+
+main .spot-container .spot-description-container p {
+  font-size: clamp(1rem, 0.6875rem + 1vw, 1.25rem);
+  font-family: var(--main-font);
+  line-height: 1.8;
+}
+
+footer .contact-container {
+  display: var(--root-flex);
+  flex-direction: var(--flex-d-col);
+  justify-content: var(--flex-jc-s-between);
+  align-items: var(--flex-a-center);
+  padding: 2rem;
+  background-color: var(--tertiary-color);
+  color: var(--secondary-color);
+  font-family: var(--main-font);
+  line-height: 1.8;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* media queries */
+@media only screen and (max-width: 1024px) {
+  header {
+    display: var(--root-flex);
+    justify-content: var(--flex-jc-a-around);
+  }
+
+  main .tourist-spots-container {
+    margin-top: 0;
+    padding: 6.25rem 2rem;
+  }
+
+  main .tourist-spots-container .tourist-item-card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  header {
+    padding: 0 2rem;
+    position: absolute;
+    top: 0;
+    justify-content: var(--flex-jc-s-between);
+  }
+
+  header.is-show {
+    height: 310px;
+    align-items: var(--flex-a-start);
+    padding: 2rem;
+    transition: height 0.5s ease;
+  }
+
+  header nav {
+    opacity: 0;
+  }
+
+  header nav.is-show {
+    opacity: 1;
+    position: absolute;
+    top: 11.25rem;
+    right: 50%;
+    left: 46%;
+    transform: translate(-50%, -50%);
+    z-index: 15;
+    transition: opacity 1s ease;
+    /* transition: transform 0.5s ease, opacity 0.5s ease; */
+  }
+
+  header nav ul {
+    display: var(--root-grid);
+    place-items: center;
+  }
+
+  header nav ul li {
+    line-height: 3;
+  }
+
+  header nav ul li a:hover {
+    background-color: var(--secondary-color);
+  }
+
+  header .menu-bar {
+    display: block;
+    font-size: 1.5rem;
+  }
+
+  header .menu-bar.is-active {
+    margin-top: -5px;
+  }
+
+  main .header-banner-container {
+    padding: 0 2rem;
+  }
+
+  main .tourist-spots-container {
+    margin-top: 0;
+    padding: 5.25rem 2rem;
+  }
+
+  main .tourist-spots-container .tourist-item-card-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  /* Places page*/
+  main .spot-container {
+    padding: 3.125rem;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  main .header-banner-container .header-text-container {
+    padding: 0;
+  }
+  main .tourist-spots-container .tourist-item-card-container {
+    padding: 0;
+  }
+}
