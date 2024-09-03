@@ -28,6 +28,19 @@ document.addEventListener("DOMContentLoaded", () => {
    }
   };
 
+  const onResize = () => {
+    innerWidth 
+    ? (() => {
+        header.classList.remove("is-show");
+        menuIcon.classList.remove("bx-x");
+        navLinks.classList.remove("is-show");
+        onHoverMenu.classList.remove("is-active");
+        arrowIcon.style.transform = "";
+      })() 
+    : undefined;
+  }
+
   menuBar.addEventListener("click", toggleMenu);
   places.addEventListener("click", toggleDropdown);
+  window.addEventListener("resize", onResize);
 });
