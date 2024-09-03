@@ -613,7 +613,6 @@ footer .contact-container {
 
   header nav ul {
     display: var(--root-grid);
-    place-items: center;
   }
 
   header nav ul li {
@@ -634,7 +633,9 @@ footer .contact-container {
   }
 
   header nav ul .hover-menu.is-active{
-    margin-top: 33rem;
+    display: var(--root-grid);
+    place-content: center;
+    margin: 14.5rem  -3rem auto -3rem;
   }
 
   main .header-banner-container {
