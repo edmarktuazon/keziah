@@ -3,16 +3,31 @@ document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelector("nav");
   const menuBar = document.querySelector(".menu-bar");
   const menuIcon = document.querySelector(".bx-menu");
-  // const overLay = document.querySelector(".overlay");
-  // const logoBrand = document.querySelector(".logo-brand");
+  const arrowIcon = document.querySelector(".bx-chevron-down");
+  const onHoverMenu = document.querySelector(".hover-menu");
+  const places = document.querySelector("#places");
 
-  const handleMenu = () => {
+  if (!header || !navLinks || !menuBar || !menuIcon || !arrowIcon || !onHoverMenu || !places) {
+    console.error("Element not found in DOM");
+    return;
+  }
+
+  const toggleMenu = () => {
     header.classList.toggle("is-show");
     navLinks.classList.toggle("is-show");
-    // overLay.classList.toggle("is-show");
     menuBar.classList.toggle("is-active");
     menuIcon.classList.toggle("bx-x");
   };
 
-  menuBar.addEventListener("click", handleMenu);
+  const toggleDropdown = () => {
+    onHoverMenu.classList.toggle("is-active");
+    if(arrowIcon.style.transform === "rotate(180deg)") {
+      arrowIcon.style.transform = "";
+   }else{
+     arrowIcon.style.transform = "rotate(180deg)";
+   }
+  };
+
+  menuBar.addEventListener("click", toggleMenu);
+  places.addEventListener("click", toggleDropdown);
 });

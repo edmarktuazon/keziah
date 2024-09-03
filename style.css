@@ -189,6 +189,7 @@ header .logo-brand span {
 
 header nav ul {
   display: var(--root-flex);
+  position: relative;
 }
 
 header nav ul li a {
@@ -197,11 +198,52 @@ header nav ul li a {
   font-weight: 700;
   color: var(--tertiary-color);
   transition: color 0.3s ease;
+  display:var(--root-flex);
+  align-items: var(--flex-a-center);
 }
+
 
 header nav ul li a:hover {
   color: var(--primary-color);
   transition: color 0.3s ease;
+}
+
+header nav ul .hover-menu{
+  margin-top: 2.6rem;
+  margin-left: 4rem;
+  position: absolute;
+  background-color: var(--secondary-color);
+  border-radius: 0.5rem;
+  padding: 1.25rem 0.3125rem;
+  width: 13.75rem;
+  display: none;
+  z-index: 999;
+}
+
+header nav ul .hover-menu ul{
+  display: var(--root-flex);
+  flex-direction: var(--flex-d-col);
+}
+
+header nav ul .hover-menu ul li a{
+  font-weight: normal;
+}
+header nav ul .hover-menu ul li a:hover{
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+header .hover-menu ul li a:hover{
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+header nav ul .hover-menu.is-active{
+  display: block;
+}
+
+header nav ul .hover-menu.is-active li{
+  line-height: 1;
 }
 
 header .menu-bar {
@@ -562,7 +604,7 @@ footer .contact-container {
     position: absolute;
     top: 11.25rem;
     right: 50%;
-    left: 46%;
+    left: 44%;
     transform: translate(-50%, -50%);
     z-index: 15;
     transition: opacity 1s ease;
@@ -589,6 +631,10 @@ footer .contact-container {
 
   header .menu-bar.is-active {
     margin-top: -5px;
+  }
+
+  header nav ul .hover-menu.is-active{
+    margin-top: 33rem;
   }
 
   main .header-banner-container {
