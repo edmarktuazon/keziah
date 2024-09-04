@@ -21,11 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const toggleDropdown = () => {
     onHoverMenu.classList.toggle("is-active");
-    if(arrowIcon.style.transform === "rotate(180deg)") {
-      arrowIcon.style.transform = "";
-   }else{
-     arrowIcon.style.transform = "rotate(180deg)";
-   }
+    arrowIcon.style.transform === "rotate(180deg)" ? arrowIcon.style.transform = null
+    : arrowIcon.style.transform = "rotate(180deg)";
   };
 
   const onResize = () => {
@@ -37,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         onHoverMenu.classList.remove("is-active");
         arrowIcon.style.transform = "";
       })() 
-    : undefined;
+    : null;
   }
 
   menuBar.addEventListener("click", toggleMenu);
